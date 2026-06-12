@@ -1,0 +1,333 @@
+ /* ==========================================
+   FADE IN ANIMATION
+========================================== */
+
+.fade-in-section {
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.fade-in-section.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* ==========================================
+   FLOATING PROFILE IMAGE
+========================================== */
+
+.hero__img {
+
+    animation:
+        floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ==========================================
+   TYPING CURSOR
+========================================== */
+
+.typing-text {
+
+    position: relative;
+
+    color: var(--clr-primary);
+
+    font-weight: 700;
+}
+
+.typing-text::after {
+
+    content: "|";
+
+    animation:
+        blink .8s infinite;
+}
+
+@keyframes blink {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ==========================================
+   BUTTON HOVER EFFECT
+========================================== */
+
+.btn {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.25),
+            transparent
+        );
+
+    transition: .6s;
+}
+
+.btn:hover::before {
+
+    left: 100%;
+}
+
+/* ==========================================
+   SKILL CARD GLOW EFFECT
+========================================== */
+
+.skill-card {
+
+    position: relative;
+}
+
+.skill-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent,
+            rgba(37,99,235,.08),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition: .5s ease;
+}
+
+.skill-card:hover::before {
+
+    opacity: 1;
+}
+
+/* ==========================================
+   PROJECT CARD EFFECT
+========================================== */
+
+.project-card {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.project-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(37,99,235,.08),
+            transparent
+        );
+
+    transition: .6s;
+}
+
+.project-card:hover::after {
+
+    left: 100%;
+}
+
+/* ==========================================
+   NAVBAR LINK HOVER
+========================================== */
+
+.nav__link {
+
+    transition:
+        color .3s ease;
+}
+
+.nav__link:hover {
+
+    color: var(--clr-primary);
+}
+
+/* ==========================================
+   HERO BUTTON POP
+========================================== */
+
+.hero__buttons .btn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+}
+
+/* ==========================================
+   TIMELINE ANIMATION
+========================================== */
+
+.timeline__item {
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.timeline__item:hover {
+
+    transform:
+        translateX(10px);
+
+    box-shadow:
+        var(--shadow-lg);
+}
+
+/* ==========================================
+   PROFILE BUTTONS
+========================================== */
+
+.profiles__links .btn {
+
+    transition:
+        transform .3s ease;
+}
+
+.profiles__links .btn:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+/* ==========================================
+   CONTACT INPUT EFFECT
+========================================== */
+
+.contact__input {
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.contact__input:focus {
+
+    box-shadow:
+        0 0 0 4px
+        rgba(37,99,235,.15);
+}
+
+/* ==========================================
+   SECTION TITLE ANIMATION
+========================================== */
+
+.section-title {
+
+    position: relative;
+
+    display: inline-block;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -10px;
+
+    transform: translateX(-50%);
+
+    width: 60px;
+
+    height: 4px;
+
+    border-radius: 20px;
+
+    background: var(--clr-primary);
+}
+
+/* ==========================================
+   MOBILE OPTIMIZATION
+========================================== */
+
+@media (max-width:768px) {
+
+    .hero__img {
+
+        animation:
+            none;
+    }
+
+    .btn:hover {
+
+        transform: none;
+    }
+}

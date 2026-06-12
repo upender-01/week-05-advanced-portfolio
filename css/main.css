@@ -1,0 +1,254 @@
+ /* ==========================================
+   ROOT VARIABLES
+========================================== */
+
+:root {
+
+    --clr-primary: #2563eb;
+    --clr-primary-dark: #1d4ed8;
+
+    --clr-bg: #f8fafc;
+    --clr-surface: #ffffff;
+
+    --clr-text: #0f172a;
+    --clr-text-light: #64748b;
+
+    --clr-border: rgba(148,163,184,.2);
+
+    --shadow-sm:
+        0 4px 10px rgba(0,0,0,.05);
+
+    --shadow-md:
+        0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-lg:
+        0 20px 50px rgba(0,0,0,.12);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    --transition: .3s ease;
+}
+
+/* ==========================================
+   DARK MODE VARIABLES
+========================================== */
+
+[data-theme="dark"] {
+
+    --clr-bg: #0f172a;
+
+    --clr-surface: #1e293b;
+
+    --clr-text: #f8fafc;
+
+    --clr-text-light: #cbd5e1;
+
+    --clr-border:
+        rgba(255,255,255,.08);
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    "Inter",
+    sans-serif;
+
+    background:
+    var(--clr-bg);
+
+    color:
+    var(--clr-text);
+
+    line-height:1.7;
+
+    transition:
+    background .4s ease,
+    color .4s ease;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+body::-webkit-scrollbar{
+    width:10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background:var(--clr-primary);
+    border-radius:20px;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:min(90%,1200px);
+
+    margin-inline:auto;
+}
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:3rem;
+
+    font-size:
+    clamp(2rem,5vw,3rem);
+
+    font-weight:700;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+    0.9rem 1.8rem;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    transition:
+    var(--transition);
+
+    font-weight:600;
+}
+
+.btn--primary{
+
+    background:
+    var(--clr-primary);
+
+    color:white;
+}
+
+.btn--primary:hover{
+
+    transform:
+    translateY(-4px);
+
+    background:
+    var(--clr-primary-dark);
+
+    box-shadow:
+    0 15px 30px
+    rgba(37,99,235,.3);
+}
+
+.btn--outline{
+
+    border:2px solid
+    var(--clr-primary);
+
+    color:
+    var(--clr-primary);
+}
+
+.btn--outline:hover{
+
+    background:
+    var(--clr-primary);
+
+    color:white;
+}
+
+.btn--theme-toggle{
+
+    background:none;
+
+    font-size:1.3rem;
+}
+
+/* ==========================================
+   SCROLL PROGRESS BAR
+========================================== */
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    z-index:9999;
+}
+
+/* ==========================================
+   UTILITY CLASSES
+========================================== */
+
+.text-center{
+    text-align:center;
+}
+
+.mt-2{
+    margin-top:2rem;
+}
+
+.mt-4{
+    margin-top:4rem;
+}
